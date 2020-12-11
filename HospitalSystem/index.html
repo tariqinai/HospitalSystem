@@ -7,9 +7,8 @@
   <!--BootStrap-->
   <link rel="stylesheet" href="BootStrap/bootstrap.css">
   <link rel="stylesheet" href="BootStrap/bootstrap.min.css">
-  <link rel="stylesheet" href="BootStrap/bootstrap.min.js">
-
-
+  <script src="BootStrap/bootstrap.js"></script>
+  <script src="BootStrap/bootstrap.min.js"></script>
   <title>Hospital-System</title>
 </head>
 
@@ -34,7 +33,7 @@
         perspiciatis repellat, corrupti, deserunt veniam sit ducimus tempore cupiditate commodi nostrum neque, nam eum
         eius excepturi facilis adipisci. Error, praesentium.</div>
     </div>
-    <div class="container">
+    <div class="container bg-success">
       <table class="table table-striped table-hover jumbotron ">
         <thead class="table-info">
           <tr>
@@ -71,7 +70,68 @@
     <div class="alert alert-success">
       <strong>Congrats!</strong> Your Program run successfully...
     </div>
-    
+    <style>
+      button {
+        margin: 5px;
+      }
+    </style>
+    <div class="container" style="margin: 10px;">
+      <h2>Button Styles</h2>
+      <button type="button" class="btn">Btn1</button>
+      <button type="button" class="btn btn-primary" style="height: 100px; width: 200px;">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success btn-block">
+        <div class="spinner-border spinner-border-sm"></div>
+        Loading..
+      </button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning btn-block">Warning</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-dark disabled">Dark</button>
+      <button type="button" class="btn btn-light active">Light</button>
+      <button type="button" class="btn btn-link">Link</button>
+    </div>
+    <div class="container" style="margin: 10px;">
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+      <button type="button" class="btn btn-outline-light text-dark">Light</button>
+    </div>
+    <div class="progress" style="margin: 50px;">
+      <div class="progress-bar" style="width: 80%;">80%</div>
+    </div>
+    <div class="progress" style="margin: 20px;">
+      <div class="progress-bar progress-bar-striped bg-danger " style="width: 90%;">90%</div>
+    </div>
+    <div class="progress" style="margin: 20px;">
+      <div class="progress-bar progress-bar-striped bg-success progress-bar-animated " style="width: 60%;">60%</div>
+    </div>
+
+    <div class="spinner-border text-success " style="width: 50px; height: 50px;"></div>
+    <div class="spinner-grow text-info " style="width: 50px; height: 50px; margin-left: 20px;"></div>
+
+    <ul class="pagination ">
+      <li class="page-item "><a class="page-link text-danger" href="#">Previous</a></li>
+      <li class="page-item "><a class="page-link " href="#">1</a></li>
+      <li class="page-item "><a class="page-link " href="#">2</a></li>
+      <li class="page-item "><a class="page-link " href="#">...</a></li>
+      <li class="page-item "><a class="page-link bg-info text-dark" href="#">Next</a></li>
+    </ul>
+
+    <hr>
+    <div class="dropdown" style="margin: 50px;">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> Go! </button>
+      <div class="dropdown-menu">
+        <a href="#" class="dropdown-item">Link1</a>
+        <a href="#" class="dropdown-item">Link2</a>
+      </div>
+    </div>
+    <hr>
   </div>
 </body>
+
 </html>
