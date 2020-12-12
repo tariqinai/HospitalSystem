@@ -12,7 +12,12 @@
   <script src="BootStrap/bootstrap.min.js"></script>
   <!--CSS-->
   <link rel="stylesheet" href="CSS/style.css">
-  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <title>Hospital-System</title>
 </head>
 
@@ -127,14 +132,42 @@
     </ul>
 
     <hr>
-    <div class="dropdown" style="margin: 50px;">
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> Go! </button>
-      <div class="dropdown-menu">
+    <div class="dropdown dropdown-menu-right" style="margin: 50px;">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-target="d1"> Go! </button>
+      <div class="dropdown-menu" id="d1">
         <a href="#" class="dropdown-item">Link1</a>
         <a href="#" class="dropdown-item">Link2</a>
       </div>
     </div>
     <hr>
+
+    <button type="button" class="btn btn-success " data-toggle="collapse" data-target="#demo">Collapsable</button>
+    <div id="demo" class="collapse">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, ratione! Illum, nulla nihil soluta iste eveniet
+      velit similique molestias repudiandae in aliquam. Quia, esse iure necessitatibus autem aperiam repellat itaque?
+    </div>
+    <hr style="background-color: #333333;">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#"><img src="Logos/closeup-support-hands.jpg" height="50px" width="50px" alt="Hands" class="img-thumbnail"></a>
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </nav>
+    <hr>
+    
+    
   </div>
 </body>
 
