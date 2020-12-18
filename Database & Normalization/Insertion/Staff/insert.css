@@ -1,49 +1,52 @@
-@font-face{
+@font-face {
   font-family: font1;
-  src: url("Fonts/quicksand/Quicksand_Bold_Oblique.otf");
+  src: url("");
 }
-@font-face{
+@font-face {
   font-family: font2;
   src: url("Fonts/Langar-Regular.ttf");
 }
-body{
+body {
   margin: 25px;
   font-family: font1;
-  background-color: rgb(204, 230, 244);
+  background-image: url("Pics/background2\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-#list{
+
+#list {
   display: inline-block;
 }
-#form{
+#form {
   display: inline-block;
 }
-#form-groups{
+#form-groups {
   margin-top: 50px;
   margin: 20px 0 20px 0;
 }
-.custom-input{
+.custom-input {
   margin: 35px 0 35px 0;
   border-radius: 10px;
   border: 2px solid rgb(75, 163, 195);
   box-shadow: 5px 5px rgb(75, 163, 195);
 }
-.custom-input-a{
+.custom-input-a {
   background-color: rgb(214, 40, 57);
-  color: rgb(204, 230, 244 );
+  color: rgb(204, 230, 244);
 }
-.custom-input-badge{
+.custom-input-badge {
   background-color: rgb(23, 86, 118);
   color: rgb(204, 230, 244);
   text-align: center;
 }
-#color::placeholder{
+#color::placeholder {
   color: rgb(186, 50, 79);
 }
-#color{
+#color {
   color: rgb(77, 167, 200);
 }
-#header{
+#header {
   text-align: center;
-  color: rgb(214, 40, 57);
-  
+  color: rgb(23, 86, 118);
 }
