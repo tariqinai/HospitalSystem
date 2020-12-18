@@ -1,20 +1,19 @@
 @font-face {
   font-family: font1;
-  src: url("");
+  src: url("../Fonts/quicksand/Quicksand_Bold_Oblique.otf");
 }
 @font-face {
   font-family: font2;
-  src: url("Fonts/Langar-Regular.ttf");
+  src: url("../Fonts/Langar-Regular.ttf");
 }
 body {
   margin: 25px;
   font-family: font1;
-  background-image: url("Pics/background2\ \(1\).jpg");
+  background-image: url("../Pics/background2.1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-
 #list {
   display: inline-block;
 }
