@@ -1,0 +1,29 @@
+@font-face{
+  font-family: font1;
+  src: url("Fonts/quicksand/Quicksand_Bold_Oblique.otf");
+}
+body{
+  margin: 25px;
+  font-family: font1;
+}
+a{
+  background-color: #FFA69E;
+}
+div{
+  border: 1px solid lightblue;
+}
+#list{
+  display: inline-block;
+}
+#form{
+  display: inline-block;
+}
+.b1{
+  margin-left: 20px;
+}
+#form-groups{
+  margin-top: 50px;
+}
+.custom{
+    
+}
