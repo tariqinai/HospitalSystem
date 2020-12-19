@@ -49,3 +49,13 @@ body {
   text-align: center;
   color: rgb(23, 86, 118);
 }
+#submit{
+  width: 100px;
+  height: 50px;
+  margin-top: 80px; 
+  font-family: font2; 
+  font-weight: bold;
+  font-size: larger;
+  background-color: rgb(186, 50, 79);
+  color: rgb(204, 230, 244);
+}
