@@ -1,12 +1,12 @@
 <?php
-$sid = $_POST['sid'];
-$sname = $_POST['sname'];
-$scontact = $_POST['scontact'];
-$scnic = $_POST['scnic'];
-$saddress = $_POST['saddress'];
-$ssalary = $_POST['ssalary'];
-$sdesignation = $_POST['sdesignation'];
-$sshift = $_POST['sid'];
+$sid = $_POST['s_Id'];
+$sname = $_POST['s_Name'];
+$scontact = $_POST['s_Contact'];
+$scnic = $_POST['s_CNIC'];
+$saddress = $_POST['s_Address'];
+$ssalary = $_POST['s_Salary'];
+$sdesignation = $_POST['s_Designation'];
+$sshift = $_POST['s_Shift'];
 
 /* Logic of DB */
 $conn = mysqli_connect('localhost', 'root', '', 'hospital');
@@ -22,8 +22,10 @@ if (mysqli_num_rows($myResult) > 0) {
 else {
   if (mysqli_query($conn, $query)) {
     echo "Record Insertion Succeed";
-  } else {
+  } /else {
     echo "Error" . $query . "<br>" . mysqli_error($conn);
-  }
+  
 }
 mysqli_close($conn);
+
+?>
