@@ -14,6 +14,29 @@
   <!-- * CSS -->
   <link rel="stylesheet" href="insert.css">
 
+  <script>
+    function myAJAX(){
+      id = document.getElementById('sid').value;
+      name = document.getElementById('sname').value;
+      contact = document.getElementById('scontact').value;
+      cnic = document.getElementById('scnic').value;
+      address = document.getElementById('saddress').value;
+      salary = document.getElementById('ssalary').value;
+      designation = document.getElementById('sdesignation').value;
+      shift = document.getElementById('sshift').value;
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200)
+        document.getElementById("myspan").innerHTML = this.responseText;
+      };
+      xmlhttp.open("GET", "test.php?s_Id=" + id + "&s_Name=" + name +
+       "&s_Contact" + contact + "&s_CNIC" + cnic + "&s_Address" + address 
+       + "&s_Salary" + salary + "&s_Designation" + designation + "&s_Shift" + shift, true);
+      xmlhttp.send();
+    }
+  </script>
+
   <title>DataBase-Hospital</title>
 </head>
 
@@ -118,43 +141,42 @@
       <!-- * Form for Insertion -->
       <div id="form" class="col-8">
         <h1 id="header"><b><u style="font-family: font2;">Insertion(Staff)</u></b></h1>
-        <form action="insert.php" method="post">
+        <form>
           <div id="form-groups">
             <!-- * Form Groups -->
             <div class="form-group">
-              <input id="color" type="text" name="s_Id" class="custom-input form-control" placeholder="S_id">
+              <input id="sid" type="text" class="custom-input form-control" placeholder="S_id">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_Name" class="custom-input form-control" placeholder="s_Name">
+              <input id="sname" type="text" class="custom-input form-control" placeholder="s_Name">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_Contact" class="custom-input form-control"
+              <input id="scontact" type="text" class="custom-input form-control"
                 placeholder="s_Contact">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_CNIC" class="custom-input form-control" placeholder="s_CNIC">
+              <input id="scnic" type="text" class="custom-input form-control" placeholder="s_CNIC">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_Address" class="custom-input form-control"
+              <input id="saddress" type="text" class="custom-input form-control"
                 placeholder="s_Address">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_Salary" class="custom-input form-control"
-                placeholder="s_Salary">
+              <input id="ssalary" type="text" class="custom-input form-control" placeholder="s_Salary">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_Designation" class="custom-input form-control"
+              <input id="sdesignation" type="text" class="custom-input form-control"
                 placeholder="s_Designation">
             </div>
             <div class="form-group">
-              <input id="color" type="text" name="s_Shift" class="custom-input form-control"
-                placeholder="s_Shift">
+              <input id="sshift" type="text" class="custom-input form-control" placeholder="s_Shift">
             </div>
             <div class="form-group">
-              <center><input id="submit" type="submit" name="submit" value="Submit"
-                  class="custom-input form-control"></center>
+              <center><input id="submit" type="submit" name="submit" value="Submit" class="custom-input form-control" onclick="myAJAX()">
+              </center>
             </div>
-          </div>
+          </div><br>
+          <center><span id="myspan" style="font-family: font2; color: rgb(75, 163, 195) ; margin: 30px; font-size: large;"></span></center>
         </form>
       </div>
     </div>
@@ -166,10 +188,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- * JavaScript-->
-  <script src="insert.js"></script>
-  <!-- * PHP -->
-  <script src="insert.php"></script>
+  <!-- * <script src="insert.js"></script>-->
 
 </body>
-
 </html>

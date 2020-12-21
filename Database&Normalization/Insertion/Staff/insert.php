@@ -23,7 +23,7 @@
       $query = "INSERT INTO `staff` (`s_id`, `s_Name`, `s_Contact`, `s_CNIC`, `s_Address`, `s_Salary`, `s_Designation`, `s_Shift`) 
       VALUES ('$sid', '$sname', '$scontact', '$scnic', '$saddress', '$ssalary', '$sdesignation', '$sshift')";  
       if (mysqli_query($conn, $query)) {
-        echo "Record Insertion Succeed";
+        echo '<h1>'."Record Insertion Succeed".'</h1>';
       } 
       else {
         echo "Error" . $query . "<br>" . mysqli_error($conn);  
