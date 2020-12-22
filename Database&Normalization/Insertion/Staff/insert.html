@@ -30,7 +30,7 @@
       if (this.readyState == 4 && this.status == 200)
         document.getElementById("myspan").innerHTML = this.responseText;
       };
-      xmlhttp.open("GET", "test.php?s_Id=" + id + "&s_Name=" + name +
+      xmlhttp.open("GET", "insert.php?s_Id=" + id + "&s_Name=" + name +
        "&s_Contact" + contact + "&s_CNIC" + cnic + "&s_Address" + address 
        + "&s_Salary" + salary + "&s_Designation" + designation + "&s_Shift" + shift, true);
       xmlhttp.send();
@@ -176,8 +176,8 @@
               </center>
             </div>
           </div><br>
-          <center><span id="myspan" style="font-family: font2; color: rgb(75, 163, 195) ; margin: 30px; font-size: large;"></span></center>
         </form>
+        <center><span id="myspan" style="font-family: font2; color: rgb(214, 40, 57) ; margin: 30px; font-size: x-large;"></span></center>
       </div>
     </div>
   </div>
@@ -189,6 +189,8 @@
 
   <!-- * JavaScript-->
   <!-- * <script src="insert.js"></script>-->
+  <!-- * PHP -->
+  <script src="insert.php"></script>
 
 </body>
 </html>

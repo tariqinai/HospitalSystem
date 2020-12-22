@@ -59,6 +59,12 @@ body {
 #sshift{
   color: rgb(77, 167, 200);
 }
+#myspan{
+  font-family: font2;
+  color: rgb(75, 163, 195) ; 
+  margin: 30px; 
+  font-size: large;
+}
 #header {
   text-align: center;
   color: rgb(23, 86, 118);
