@@ -34,10 +34,24 @@ body {
   background-color: rgb(214, 40, 57);
   color: rgb(204, 230, 244);
 }
+.custom-input-a:hover{
+  background-color: rgb(204, 230, 244);
+  color: rgb(214, 40, 57);
+  font-family: font2;
+  font-size: medium;
+}
 .custom-input-badge {
   background-color: rgb(23, 86, 118);
   color: rgb(204, 230, 244);
   text-align: center;
+  font-size: large;
+}
+.custom-input-badge:hover{
+  background-color: rgb(204, 230, 244);
+  color: rgb(23, 86, 118);
+  text-align: center;
+  font-size: large;
+  font-family: font2;
 }
 #sid::placeholder,
 #sname::placeholder,
@@ -67,7 +81,7 @@ body {
 }
 #header {
   text-align: center;
-  color: rgb(23, 86, 118);
+  color: rgb(75, 163, 195);
 }
 #submit {
   width: 100px;
@@ -78,4 +92,43 @@ body {
   font-size: larger;
   background-color: rgb(186, 50, 79);
   color: rgb(204, 230, 244);
+}
+.navbar{
+  color: rgb(186, 50, 79);
+  font-size: large;
+  font-style: italic;
+  background-color: rgb(204, 230, 244,0.6);
+  margin: 5px;
+  border-radius: 10px;
+  font-family: font2;
+}
+#navbar{
+  text-align: center;
+  margin-bottom: 25px;
+}
+.navbar:link{
+  background-color: rgb(186, 50, 79);
+  color: rgb(204, 230, 244,0.6);
+  text-decoration: none;
+}
+.navbar:visited{
+  background-color: rgb(23, 86, 118);
+  color: rgb(23, 86, 118);
+  text-decoration: none;
+}
+.navbar:hover , .navbar:active{
+  background-color: rgb(23, 86, 118);
+  color: rgb(204, 230, 244);
+  text-decoration: none;
+  font-family: font1;
+}
+#submit:hover{
+  width: 100px;
+  height: 50px;
+  margin-top: 80px;
+  font-family: font2;
+  font-weight: bold;
+  font-size: larger;
+  background-color: rgb(204, 230, 244);
+  color: rgb(186, 50, 79); 
 }

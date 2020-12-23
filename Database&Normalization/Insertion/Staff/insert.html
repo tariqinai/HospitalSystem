@@ -1,7 +1,9 @@
+<!-- * Badge Update -->
 <?php
     $conn = mysqli_connect('localhost', 'root', '', 'carecenter'); 
-    $queryCheck = "SELECT * FROM staff"; 
-    $myResultCheck = mysqli_query($conn, $queryCheck); 
+    $query = "SELECT * FROM staff"; 
+    $myResultCheck = mysqli_query($conn, $query);
+    $staff = mysqli_num_rows($myResultCheck);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +56,7 @@
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action ">
             Staff
             <span
-              class="custom-input-badge badge custom-input-badge badge-success custom-input-badge badge-pill  "><?php echo mysqli_num_rows($myResultCheck) ; ?></span>
+              class="custom-input-badge badge custom-input-badge badge-success custom-input-badge badge-pill  "><?php echo mysqli_num_rows($myResultCheck); ?>*</span>
           </a>
           <a href="#" class=" d-flex custom-input-a justify-content-between list-group-item list-group-item-action  ">
             Doctor
@@ -145,6 +147,13 @@
       </div>
       <!-- * Form for Insertion -->
       <div id="form" class="col-8">
+        <center>
+          <div class="btn-group" id="navbar">
+            <a href="#"><button type="button" class="btn navbar ">Insertion</button></a>
+            <a href="#"><button type="button" class="btn navbar ">Updatation</button></a>
+            <a href="#"><button type="button" class="btn navbar ">Deletion</button></a>
+          </div>
+        </center>
         <h1 id="header"><b><u style="font-family: font2;">Insertion(Staff)</u></b></h1>
         <form>
           <div id="form-groups">
