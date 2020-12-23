@@ -1,3 +1,8 @@
+<?php
+    $conn = mysqli_connect('localhost', 'root', '', 'carecenter'); 
+    $queryCheck = "SELECT * FROM staff"; 
+    $myResultCheck = mysqli_query($conn, $queryCheck); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +18,7 @@
   <link rel="stylesheet" href="/Hospital System/HospitalSystem/Favicon/all.css">
   <!-- * CSS -->
   <link rel="stylesheet" href="insert.css">
-
+  <!-- * AJAX-->
   <script>
     function myAJAX(){
       id = document.getElementById('sid').value;
@@ -49,7 +54,7 @@
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action ">
             Staff
             <span
-              class="custom-input-badge badge custom-input-badge badge-success custom-input-badge badge-pill  ">*</span>
+              class="custom-input-badge badge custom-input-badge badge-success custom-input-badge badge-pill  "><?php echo mysqli_num_rows($myResultCheck) ; ?></span>
           </a>
           <a href="#" class=" d-flex custom-input-a justify-content-between list-group-item list-group-item-action  ">
             Doctor

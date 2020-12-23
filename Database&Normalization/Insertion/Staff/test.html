@@ -1,0 +1,20 @@
+<?php
+    $conn = mysqli_connect('localhost', 'root', '', 'carecenter'); 
+    $queryCheck = "SELECT * FROM staff"; 
+    $myResultCheck = mysqli_query($conn, $queryCheck); 
+    $rows =  mysqli_num_rows($myResultCheck) ;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span>
+    Name: <?php echo "Tariq"; ?>    
+  </span>
+  
+</body>
+</html>
