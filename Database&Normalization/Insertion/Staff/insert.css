@@ -81,7 +81,11 @@ body {
 }
 #header {
   text-align: center;
-  color: rgb(75, 163, 195);
+  color: rgb(75, 163, 195,0.8);
+}
+#header:hover{
+  color: rgb(214, 40, 57,0.8);
+  text-align: center;
 }
 #submit {
   width: 100px;

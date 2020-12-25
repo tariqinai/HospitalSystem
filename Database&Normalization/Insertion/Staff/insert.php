@@ -1,12 +1,28 @@
 <?php
-  $sid = $_GET['s_Id'];
-  $sname = $_GET['s_Name'];
-  $scontact = $_GET['s_Contact'];
-  $scnic = $_GET['s_CNIC'];
-  $saddress = $_GET['s_Address'];
-  $ssalary = $_GET['s_Salary'];
-  $sdesignation = $_GET['s_Designation'];
-  $sshift = $_GET['s_Shift'];
+  if(isset($_GET['s_Id'])){
+    $sid = $_GET['s_Id'];
+  }
+  if(isset($_GET['s_Name'])){
+    $sname = $_GET['s_Name'];
+  }
+  if(isset($_GET['s_Contact'])){
+    $scontact = $_GET['s_Contact'];
+  }
+  if(isset($_GET['s_CNIC'])){
+    $scnic = $_GET['s_CNIC'];
+  }
+  if(isset($_GET['s_Address'])){
+    $saddress = $_GET['s_Address'];
+  }
+  if(isset($_GET['s_Salary'])){
+    $ssalary = $_GET['s_Salary'];
+  }
+  if(isset($_GET['s_Designation'])){
+    $sdesignation = $_GET['s_Designation'];
+  }
+  if(isset($_GET['s_Shift'])){
+    $sshift = $_GET['s_Shift'];
+  }
 
   /* Logic of DB */
   if(empty($sid) And empty($sname) And empty($scontact) And empty($scnic) And empty($saddress) And empty($ssalary) And empty($sdesignation) And empty($sshift) ){
@@ -24,8 +40,7 @@
         echo '<q>'.'Record Already Exist'.'</q>'; 
       }
       else{
-        $query = "INSERT INTO `staff` (`s_id`, `s_Name`, `s_Contact`, `s_CNIC`, `s_Address`, `s_Salary`, `s_Designation`, `s_Shift`) 
-        VALUES ('$sid', '$sname', '$scontact', '$scnic', '$saddress', '$ssalary', '$sdesignation', '$sshift')";  
+        $query = "INSERT INTO `staff` (`s_id`, `s_Name`, `s_Contact`, `s_CNIC`, `s_Address`, `s_Salary`, `s_Designation`, `s_Shift`) VALUES ('$sid', '$sname', '$scontact', '$scnic', '$saddress', '$ssalary', '$sdesignation', '$sshift')";  
         if (mysqli_query($conn, $query)) {
           echo '<q>'."Record Insertion Succeed".'</q>';
         } 
@@ -34,7 +49,7 @@
         }
       }
     }
-    mysqli_close($conn);
+    
   }
-  
+  mysqli_close($conn);
 ?>
