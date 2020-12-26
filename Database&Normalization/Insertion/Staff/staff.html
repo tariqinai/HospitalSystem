@@ -19,7 +19,7 @@
   <!-- * Font&icons -->
   <link rel="stylesheet" href="/Hospital System/HospitalSystem/Favicon/all.css" />
   <!-- * CSS -->
-  <link rel="stylesheet" href="staff.css" />
+  <link rel="stylesheet" href="staff.css">
   <!-- * AJAX-->
   <script>
     function myAJAX() {
@@ -39,14 +39,13 @@
       };
       xmlhttp.open(
         "GET",
-        "staff.php?s_Id=" + id +
-        "&s_Name=" + name +
+        "staff.php?s_Id=" + id 
+        + "&s_Name=" + name +
         "&s_Contact=" + contact  + 
         "&s_CNIC=" + cnic +
         "&s_Address=" + address +
         "&s_Salary=" + salary +
-        "&s_Designation=" + designation + 
-        "&s_Shift=" + shift, true );
+        "&s_Designation=" + designation + "&s_Shift=" + shift, true );
       xmlhttp.send();
     }
   </script>
@@ -63,7 +62,7 @@
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Staff
             <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
-              <?php echo mysqli_num_rows($myResultCheck);?>*
+              <?php echo mysqli_num_rows($myResultCheck); ?>
             </span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
@@ -157,13 +156,13 @@
       <div id="form" class="col-8">
         <center>
           <div class="btn-group" id="navbar">
-            <a href="../../Insertion/Staff/staff.html"><button type="button" class="btn navbar">Insertion</button></a>
-            <a href="#"><button type="button" class="btn navbar">Updatation</button></a>
+            <a href="#"><button type="button" class="btn navbar">Insertion</button></a>
+            <a href="../../Update/Staff/staff.html"><button type="button" class="btn navbar">Updatation</button></a>
             <a href="../../Delete/Staff/staff.html"><button type="button" class="btn navbar">Deletion</button></a>
           </div>
         </center>
         <h1 id="header">
-          <b><u style="font-family: font2">Update(Staff)</u></b>
+          <b><u style="font-family: font2">Insertion(Staff)</u></b>
         </h1>
         <form>
           <div id="form-groups">
@@ -205,8 +204,7 @@
                 font-family: font2;
                 color: rgb(214, 40, 57);
                 margin: 30px;
-                font-size: x-large;
-              "></span>
+                font-size: x-large;"> </span>
         </center>
       </div>
     </div>
