@@ -4,6 +4,9 @@
     $query = "SELECT * FROM staff"; 
     $myResultCheck = mysqli_query($conn, $query);
     $staff = mysqli_num_rows($myResultCheck);
+    $query = "SELECT * FROM `doctor`"; 
+    $myResultCheck = mysqli_query($conn, $query);
+    $doctor = mysqli_num_rows($myResultCheck);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +14,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="insert.css" />
   <!-- * Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/Hospital System/HospitalSystem/BootStrap/bootstrap.css" />
@@ -19,19 +21,17 @@
   <!-- * Font&icons -->
   <link rel="stylesheet" href="/Hospital System/HospitalSystem/Favicon/all.css" />
   <!-- * CSS -->
-  <link rel="stylesheet" href="staff.css">
+  <link rel="stylesheet" href="doctor.css">
   <!-- * AJAX-->
   <script>
     function myAJAX() {
-      id = document.getElementById("sid").value;
-      name = document.getElementById("sname").value;
-      contact = document.getElementById("scontact").value;
-      cnic = document.getElementById("scnic").value;
-      address = document.getElementById("saddress").value;
-      salary = document.getElementById("ssalary").value;
-      designation = document.getElementById("sdesignation").value;
-      shift = document.getElementById("sshift").value;
+      id = document.getElementById("did").value;
+      specialization = document.getElementById("dspecialization").value;
+      idFK = document.getElementById("sid").value;
 
+      console.log(id);
+      console.log(specialization);
+      console.log(idFK);
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200)
@@ -39,13 +39,9 @@
       };
       xmlhttp.open(
         "GET",
-        "staff.php?s_Id=" + id 
-        + "&s_Name=" + name +
-        "&s_Contact=" + contact  + 
-        "&s_CNIC=" + cnic +
-        "&s_Address=" + address +
-        "&s_Salary=" + salary +
-        "&s_Designation=" + designation + "&s_Shift=" + shift, true );
+        "doctor.php?D_id=" + id
+        + "&D_Specialization=" + specialization +
+        "&s_id=" + idFK, true);
       xmlhttp.send();
     }
   </script>
@@ -62,93 +58,78 @@
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Staff
             <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
-              <?php echo mysqli_num_rows($myResultCheck); ?>
+              <?php echo $staff; ?>
             </span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Doctor
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $doctor; ?>
+            </span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Check-up
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Operation
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             DocOp
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Token
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Patient
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             OpResult
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Room
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             RoomAllocation
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Attendence
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Services
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             OpServices
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Bill
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             BillService
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Payment
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Login
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Sign-Up
-            <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
         </div>
       </div>
@@ -157,47 +138,32 @@
         <center>
           <div class="btn-group" id="navbar">
             <a href="#"><button type="button" class="btn navbar">Insertion</button></a>
-            <a href="../../Update/Staff/staff.html"><button type="button" class="btn navbar">Updatation</button></a>
-            <a href="../../Delete/Staff/staff.html"><button type="button" class="btn navbar">Deletion</button></a>
+            <a href="#"><button type="button" class="btn navbar">Updatation</button></a>
+            <a href="#"><button type="button" class="btn navbar">Deletion</button></a>
           </div>
         </center>
         <h1 id="header">
-          <b><u style="font-family: font2">Insertion(Staff)</u></b>
+          <b><u style="font-family: font2">Insertion(Doctor)</u></b>
         </h1>
         <form>
           <div id="form-groups">
             <!-- * Form Groups -->
             <div class="form-group">
-              <input id="sid" type="text" class="custom-input form-control" placeholder="S_id" />
+              <input id="did" type="text" class="custom-input form-control" placeholder="D_id" />
             </div>
             <div class="form-group">
-              <input id="sname" type="text" class="custom-input form-control" placeholder="s_Name" />
+              <input id="dspecialization" type="text" class="custom-input form-control"
+                placeholder="D_Specialization" />
             </div>
             <div class="form-group">
-              <input id="scontact" type="text" class="custom-input form-control" placeholder="s_Contact" />
+              <input id="sid" type="text" class="custom-input form-control" placeholder="s_id">
             </div>
-            <div class="form-group">
-              <input id="scnic" type="text" class="custom-input form-control" placeholder="s_CNIC" />
-            </div>
-            <div class="form-group">
-              <input id="saddress" type="text" class="custom-input form-control" placeholder="s_Address" />
-            </div>
-            <div class="form-group">
-              <input id="ssalary" type="text" class="custom-input form-control" placeholder="s_Salary" />
-            </div>
-            <div class="form-group">
-              <input id="sdesignation" type="text" class="custom-input form-control" placeholder="s_Designation" />
-            </div>
-            <div class="form-group">
-              <input id="sshift" type="text" class="custom-input form-control" placeholder="s_Shift" />
-            </div>
-            <div class="form-group">
-              <center>
-                <input id="submit" type="button" name="submit" value="Submit" class="custom-input form-control" onclick="myAJAX()" >
-              </center>
-            </div>
+            <center>
+              <input id="submit" type="button" name="submit" value="Submit" class="custom-input form-control"
+                onclick="myAJAX()">
+            </center>
           </div>
-          <br />
+          <br>
         </form>
         <center>
           <span id="myspan" style="

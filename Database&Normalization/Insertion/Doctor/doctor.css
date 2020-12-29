@@ -53,24 +53,14 @@ body {
   font-size: large;
   font-family: font2;
 }
-#sid::placeholder,
-#sname::placeholder,
-#scontact::placeholder,
-#scnic::placeholder,
-#saddress::placeholder,
-#ssalary::placeholder,
-#sdesignation::placeholder,
-#sshift::placeholder {
+#did::placeholder,
+#dspecialization::placeholder,
+#sid::placeholder{
   color: rgb(186, 50, 79);
 }
-#sid,
-#sname,
-#scontact,
-#scnic,
-#saddress,
-#ssalary,
-#sdesignation,
-#sshift{
+#did,
+#dspecialization,
+#sid{
   color: rgb(77, 167, 200);
 }
 #header {
