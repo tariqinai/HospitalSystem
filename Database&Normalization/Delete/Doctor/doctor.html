@@ -26,8 +26,6 @@
   <script>
     function myAJAX() {
       id = document.getElementById("did").value;
-      specialization = document.getElementById("dspecialization").value;
-      idFK = document.getElementById("sid").value;
 
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
@@ -36,9 +34,7 @@
       };
       xmlhttp.open(
         "GET",
-        "doctor.php?D_id=" + id
-        + "&D_Specialization=" + specialization +
-        "&s_id=" + idFK, true);
+        "doctor.php?D_id=" + id , true);
       xmlhttp.send();
     }
   </script>
@@ -134,26 +130,19 @@
       <div id="form" class="col-8">
         <center>
           <div class="btn-group" id="navbar">
-            <a href="#"><button type="button" class="btn navbar">Insertion</button></a>
+            <a href="../../Insertion/Doctor/doctor.html"><button type="button" class="btn navbar">Insertion</button></a>
             <a href="../../Update/Doctor/doctor.html"><button type="button" class="btn navbar">Updatation</button></a>
-            <a href="../../Delete/Doctor/doctor.html"><button type="button" class="btn navbar">Deletion</button></a>
+            <a href="#"><button type="button" class="btn navbar">Deletion</button></a>
           </div>
         </center>
         <h1 id="header">
-          <b><u style="font-family: font2">Insertion(Doctor)</u></b>
+          <b><u style="font-family: font2">DELETE(Doctor)</u></b>
         </h1>
         <form>
           <div id="form-groups">
             <!-- * Form Groups -->
             <div class="form-group">
               <input id="did" type="text" class="custom-input form-control" placeholder="D_id" />
-            </div>
-            <div class="form-group">
-              <input id="dspecialization" type="text" class="custom-input form-control"
-                placeholder="D_Specialization" />
-            </div>
-            <div class="form-group">
-              <input id="sid" type="text" class="custom-input form-control" placeholder="s_id">
             </div>
             <center>
               <input id="submit" type="button" name="submit" value="Submit" class="custom-input form-control"
