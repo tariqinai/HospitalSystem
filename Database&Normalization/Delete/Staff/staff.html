@@ -1,9 +1,15 @@
 <!-- * Badge Update -->
 <?php
-    $conn = mysqli_connect('localhost', 'root', '', 'carecenter'); 
-    $query = "SELECT * FROM staff" ;
-    $myResultCheck = mysqli_query($conn, $query);
-    $staff = mysqli_num_rows($myResultCheck);
+  $conn = mysqli_connect('localhost', 'root', '', 'carecenter'); 
+  $query = "SELECT * FROM staff"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $staff = mysqli_num_rows($myResultCheck);
+  $query = "SELECT * FROM `doctor`"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $doctor = mysqli_num_rows($myResultCheck);
+  $query = "SELECT * FROM `patient`"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $patient = mysqli_num_rows($myResultCheck);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,13 +55,15 @@
           <a href="../Staff/staff.html" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Staff
             <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
-              <?php echo mysqli_num_rows($myResultCheck);?>*
+              <?php echo $staff;?>
             </span>
           </a>
           <a href="../Doctor/doctor.html" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Doctor
             <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $doctor;?>
+            </span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Check-up
@@ -77,10 +85,12 @@
             <span
               class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
           </a>
-          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+          <a href="../Patient/patient.html" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             Patient
             <span
-              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+              class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $patient;?>
+            </span>
           </a>
           <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
             OpResult
