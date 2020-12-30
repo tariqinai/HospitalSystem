@@ -1,0 +1,193 @@
+<!-- * Badge Update -->
+<?php
+  $conn = mysqli_connect('localhost', 'root', '', 'carecenter'); 
+  $query = "SELECT * FROM staff"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $staff = mysqli_num_rows($myResultCheck);
+  $query = "SELECT * FROM `doctor`"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $doctor = mysqli_num_rows($myResultCheck);
+  $query = "SELECT * FROM `patient`"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $patient = mysqli_num_rows($myResultCheck);
+  $query = "SELECT * FROM `token`"; 
+  $myResultCheck = mysqli_query($conn, $query);
+  $token = mysqli_num_rows($myResultCheck);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- * Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/Hospital System/HospitalSystem/BootStrap/bootstrap.css" />
+  <link rel="stylesheet" href="/Hospital System/HospitalSystem/BootStrap/bootstrap.min.css" />
+  <!-- * Font&icons -->
+  <link rel="stylesheet" href="/Hospital System/HospitalSystem/Favicon/all.css" />
+  <!-- * CSS -->
+  <link rel="stylesheet" href="token.css">
+  <!-- * AJAX-->
+  <script>
+    function myAJAX() {
+      id = document.getElementById("tid").value;
+      idPK = document.getElementById("pid").value;
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200)
+          document.getElementById("myspan").innerHTML = this.responseText;
+      };
+      xmlhttp.open(
+        "GET",
+        "token.php?T_id=" + id
+        + "&P_id=" + idPK , true);
+      xmlhttp.send();
+    }
+  </script>
+
+  <title>DataBase-Hospital</title>
+</head>
+
+<body style="font-family: font1">
+  <div class="container" id="main">
+    <div class="row">
+      <!-- * List Groups -->
+      <div id="list" class="col-4">
+        <div class="list-group">
+          <a href="../Staff/staff.html"
+            class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Staff
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $staff; ?>
+            </span>
+          </a>
+          <a href="../Doctor/doctor.html"
+            class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Doctor
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $doctor; ?>
+            </span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Check-up
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Operation
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            DocOp
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="../Token/token.html" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Token
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $token; ?>
+            </span>
+          </a>
+          <a href="../Patient/patient.html" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Patient
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">
+              <?php echo $patient; ?>
+            </span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            OpResult
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Room
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            RoomAllocation
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Attendence
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Services
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            OpServices
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Bill
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            BillService
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Payment
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Login
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+          <a href="#" class="d-flex custom-input-a justify-content-between list-group-item list-group-item-action">
+            Sign-Up
+            <span class="custom-input-badge badge custom-input-badge  custom-input-badge badge-pill">*</span>
+          </a>
+        </div>
+      </div>
+      <!-- * Form for Insertion -->
+      <div id="form" class="col-8">
+        <center>
+          <div class="btn-group" id="navbar">
+            <a href="../../Insertion/Token/token.html"><button type="button" class="btn navbar">Insertion</button></a>
+            <a href="../../Update/Token/token.html"><button type="button" class="btn navbar">Updatation</button></a>
+            <a href="../../Delete/Token/token.html"><button type="button" class="btn navbar">Deletion</button></a>
+          </div>
+        </center>
+        <h1 id="header">
+          <b><u style="font-family: font2">DELETE(Token)</u></b>
+        </h1>
+        <form>
+          <div id="form-groups">
+            <!-- * Form Groups -->
+            <div class="form-group">
+              <input id="tid" type="text" class="custom-input form-control" placeholder="T_id" />
+            </div>
+            <div class="form-group">
+              <input id="pid" type="text" class="custom-input form-control"
+                placeholder="P_id">
+            </div>
+            <center>
+              <input id="submit" type="button" name="submit" value="Submit" class="custom-input form-control"
+                onclick="myAJAX()">
+            </center>
+          </div>
+          <br>
+        </form>
+        <center>
+          <span id="myspan" style="
+                font-family: font2;
+                color: rgb(214, 40, 57);
+                margin: 30px;
+                font-size: x-large;"> </span>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <!-- * Bootstrap -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- * JavaScript-->
+  <!-- * <script src="insert.js"></script>-->
+  <!-- * PHP -->
+</body>
+
+</html>
