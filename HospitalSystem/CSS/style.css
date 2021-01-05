@@ -1,6 +1,15 @@
 body{
-  padding: 30px;
+  background-image: url(../../Database&Normalization/PicsSelected/background2.1.jpg);
 }
 div{
   border: 1px solid turquoise;
+  display: inline-block;
 }
+#navbar{
+  border: 1px solid turquoise;
+  background-color: rgb(44, 168, 217);
+}
+.color{
+  color: rgb(255,255,255);
+}
+
