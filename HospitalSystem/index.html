@@ -18,63 +18,109 @@
 </head>
 
 <body>
-  <!--Navbar-->
-  <nav id="navbar" class="navbar navbar-expand-sm justify-content-center">
-    <!--Brand Logo-->
-    <a href="#" class="navbar-brand color">
-      <img src="" alt="" class="img-fluid" height="50px" width="50px"> Logo
-    </a>
-    <!--Links of NavBar-->
-    <ul class="navbar-nav">
-      <!--1st Dropdown-->
-      <li class="nav-item">
-        <a href="#" class="color nav-link">Home</a>
-      </li>
-      <!--2nd DropDown-->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle color" href="#" id="navbardrop1" data-toggle="dropdown">DropDown Link 1</a>
-        <!--DropDown-->
-        <div class="dropdown-menu">
-          <a class="dropdown-item color" href="#">Dropdown1</a>
-          <a class="dropdown-item color" href="#">Dropdown2</a>
-          <a class="dropdown-item color" href="#">Dropdown3</a>
-          <a class="dropdown-item color" href="#">Dropdown4</a>
-        </div>
-      </li>
-      <!--3rd DropDown-->
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link color dropdown-toggle" id="navbardrop2" data-toggle="dropdown">
-          DropDown Link2</a>
-        <!--DropDown-->
-        <div class="dropdown-menu ">
-          <a class="dropdown-item color" href="#">Dropdown1</a>
-          <a class="dropdown-item color" href="#">Dropdown2</a>
-          <a class="dropdown-item color" href="#">Dropdown3</a>
-          <a class="dropdown-item color" href="#">Dropdown4</a>
-        </div>
-      </li>
-      <!--4th DropDown-->
-      <li class="nav-item dropdown ">
-        <a href="#" class="nav-link color dropdown-toggle" id="about" data-toggle='dropdown'>
-          DropDown About us</a>
+  <center>
+    <div class="container">
+      <div class="row">
+        <!--Navbar-->
+        <div id="nav" class="col" >
+          <nav id="navbar" class="navbar navbar-expand" style="border-radius: 5px; border: 1px solid black;">
+            <!--Brand Logo-->
+            <a href="#" class="navbar-brand color">
+              <img src="" alt="" class="img-fluid" height="50px" width="50px"> Logo
+            </a>
+            <!--Links of NavBar-->
+            <ul class="navbar-nav">
+              <!--1st Dropdown-->
+              <li class="nav-item">
+                <a href="#" class="color nav-link">Home</a>
+              </li>
+              <!--2nd DropDown-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle color" href="#" id="navbardrop1" data-toggle="dropdown">DropDown Link
+                  1</a>
+                <!--DropDown-->
+                <div class="dropdown-menu">
+                  <a class="dropdown-item color" href="#">Dropdown1</a>
+                  <a class="dropdown-item color" href="#">Dropdown2</a>
+                  <a class="dropdown-item color" href="#">Dropdown3</a>
+                  <a class="dropdown-item color" href="#">Dropdown4</a>
+                </div>
+              </li>
+              <!--3rd DropDown-->
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link color dropdown-toggle" id="navbardrop2" data-toggle="dropdown">
+                  DropDown Link2</a>
+                <!--DropDown-->
+                <div class="dropdown-menu ">
+                  <a class="dropdown-item color" href="#">Dropdown1</a>
+                  <a class="dropdown-item color" href="#">Dropdown2</a>
+                  <a class="dropdown-item color" href="#">Dropdown3</a>
+                  <a class="dropdown-item color" href="#">Dropdown4</a>
+                </div>
+              </li>
+              <!--4th DropDown-->
+              <li class="nav-item dropdown ">
+                <a href="#" class="nav-link color dropdown-toggle" id="about" data-toggle='dropdown'>
+                  DropDown About us</a>
 
-        <!--DropDown-->
-        <div class="dropdown-menu ">
-          <a class="dropdown-item color" href="#">Dropdown1</a>
-          <a class="dropdown-item color" href="#">Dropdown2</a>
-          <a class="dropdown-item color" href="#">Dropdown3</a>
-          <a class="dropdown-item color" href="#">Dropdown4</a>
+                <!--DropDown-->
+                <div class="dropdown-menu ">
+                  <a class="dropdown-item color" href="#">Dropdown1</a>
+                  <a class="dropdown-item color" href="#">Dropdown2</a>
+                  <a class="dropdown-item color" href="#">Dropdown3</a>
+                  <a class="dropdown-item color" href="#">Dropdown4</a>
+                </div>
+              </li>
+            </ul>
+            <!----------------------------->
+          </nav>
         </div>
-      </li>
-    </ul>
-    <!----------------------------->
-  </nav>
-  <!---------->
-  <div class="container-fluid">
-    <!--Grid-->
-    <div class="row">
+        <!---------->
+        <!--Grid-->
+        <!--  * Carousel -->
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
+          </ul>
+
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="Logos/sign1.png" class="d-block w-100" alt="Care-Center" height="600px">
+            </div>
+            <div class="carousel-item">
+              <img src="Logos/1.png" class="d-block w-100 " alt="Holding Hands" height="600px">
+            </div>
+            <div class="carousel-item">
+              <img src="Logos/4.png" alt="Nurse and Doctor" class="d-block w-100" height="600px">
+            </div>
+            <div class="carousel-item">
+              <img src="Logos/2.png" alt="Table set-up" class="d-block w-100" height="600px">
+            </div>
+            <div class="carousel-item">
+              <img src="Logos/3.png" alt="Doctor Team" class="d-block w-100" height="600px">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#carousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+
+        </div>
+
+      </div>
     </div>
-  </div>
+  </center>
 
 
 

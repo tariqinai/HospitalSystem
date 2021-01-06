@@ -1,12 +1,13 @@
 body{
   background-image: url(../../Database&Normalization/PicsSelected/background2.1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
-div{
-  border: 1px solid turquoise;
-  display: inline-block;
-}
+/*div{
+  border: 1px dashed black;
+}*/
 #navbar{
-  border: 1px solid turquoise;
   background-color: rgb(44, 168, 217);
 }
 .color{
