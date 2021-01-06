@@ -2,7 +2,9 @@ body{
   background-image: url(../../Database&Normalization/PicsSelected/background2.1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-
+  margin: 0px;
+  padding: 0px;
+  border: 0;
 }
 /*div{
   border: 1px dashed black;
@@ -13,4 +15,5 @@ body{
 .color{
   color: rgb(255,255,255);
 }
+
 
