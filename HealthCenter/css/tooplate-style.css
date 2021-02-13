@@ -13,8 +13,6 @@ http://www.tooplate.com/view/2098-health
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
   }
-
-
   /*---------------------------------------
      TYPOGRAPHY              
   -----------------------------------------*/
@@ -776,14 +774,14 @@ http://www.tooplate.com/view/2098-health
     height: 45px;
   }
 
-  #appointment button#cf-submit {
+  #appointment button,#cf-submit {
     background: #a5c422;
     color: #ffffff;
     font-weight: 600;
     height: 55px;
   }
 
-  #appointment button#cf-submit:hover {
+  #appointment button,#cf-submit:hover {
     background: #393939;
     color: #ffffff;
   }
