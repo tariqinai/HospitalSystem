@@ -53,22 +53,14 @@ body {
   font-size: large;
   font-family: font2;
 }
-#oid::placeholder,
-#rname::placeholder,
-#rconsent::placeholder,
-#raddress::placeholder,
-#rcnic::placeholder,
-#rcontact::placeholder,
-#pid::placeholder{
+#did::placeholder,
+#dspecialization::placeholder,
+#sid::placeholder{
   color: rgb(186, 50, 79);
 }
-#oid,
-#rname,
-#rconsent,
-#raddress,
-#rcnic,
-#rcontact,
-#pid{
+#did,
+#dspecialization,
+#sid{
   color: rgb(77, 167, 200);
 }
 #header {

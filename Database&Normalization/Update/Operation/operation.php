@@ -9,52 +9,45 @@
     
 
 /* Logic of DB */
-if (empty($rconsent)) {
-  $rconsent = NULL;
-}
-if (empty($rname)) {
-  $rname = NULL;
-}
-if (empty($raddress)) {
-  $raddress = NULL;
-}
-if (empty($rcnic)) {
-  $rcnic = NULL;
-}
-if (empty($rcontact)) {
-  $rcontact = NULL;
-}
 if (empty($oid) or empty($pid) ) {
   echo "Warning! Must enter Primary Key(oid) And Foreign Key(pid).";
 } else {
 
   $conn = mysqli_connect('localhost', 'root', '', 'carecenter');
-  $sql = "SELECT max(P_id) AS max FROM `patient` ";
+  $sql = "SELECT max(p_id) AS max FROM `patient` ";
   $result = mysqli_query($conn , $sql);
   $row = mysqli_fetch_array($result);
   $largest = $row['max'];
 
-  if (!$conn) {
+  $sql1 = "SELECT * FROM `operation` WHERE O_id = $oid ";
+  $result1 = mysqli_query($conn , $sql1);
+  $row = mysqli_fetch_assoc($result1);
+  if(empty($rname)){$rname = $row['R_Name'];}
+  if(empty($rconsent)){$rconsent = $row['R_Consent'];}
+  if(empty($raddress)){$raddress = $row['R_Address'];}
+  if(empty($rcnic)){$rcnic = $row['R_CNIC'];}
+  if(empty($rcontact)){$rcontact = $row['R_Contact'];}
+  if (!$conn){
     die("Connection Failed. ");
   } 
   else {
     $queryCheck = "SELECT * FROM `operation` WHERE O_id = $oid ";
     $myResultCheck = mysqli_query($conn, $queryCheck);
-    if (mysqli_num_rows($myResultCheck) > 0) {
-      echo '<q>' . 'Record Already Exist' . '</q>';
+    if (mysqli_num_rows($myResultCheck) < 1) {
+      echo '<q>' . 'Record Not Found.' . '</q>';
     } 
     else {
       if( $pid <= $largest ){
-        $query = "INSERT INTO `operation` (`O_id`, `R_Consent`, `R_Name`, `R_Address`, `R_CNIC`, `R_Contact`, `P_id`) VALUES ('$oid', '$rconsent', '$rname', '$raddress', '$rcnic', '$rcontact', '$pid')";
+        $query = "UPDATE `operation` SET `R_Consent` = '$rconsent', `R_Name` = '$rname', `R_Address` = '$raddress', `R_CNIc` = '$rcnic', `R_Contact` = '$rcontact',`p_id` = '$pid' WHERE `operation`.`O_id` = $oid";
         if (mysqli_query($conn, $query)) {
-          echo '<q>' . "Record Insertion Succeed" . '</q>';
+          echo '<q>' . "Record Updatation Succeed" . '</q>';
         } 
         else {
           echo "Error" . $query . "<br>" . mysqli_error($conn);
         }
       }
       else{
-        echo "Sorry! p_id max limit is from 0 to ". $largest ;
+        echo "Sorry! s_id max limit is from 0 to ". $largest ;
       }
     }
   }
